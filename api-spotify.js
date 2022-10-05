@@ -9,8 +9,13 @@ export const REQ_TOKEN = async() => {
             body: 'grant_type=client_credentials'
             
           })
-          const TOKEN = await getToken.json()
-          return TOKEN.access_token
+
+          if(getToken.status === 200 || 404) {
+            console.log('Mirá máquina, estás haciendo todo como el orto', getToken.status)
+          } else {
+            const TOKEN = await getToken.json()
+            return TOKEN.access_token
+          }
     }catch(error){
         console.log(error)
     }
