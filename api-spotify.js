@@ -1,5 +1,5 @@
 export const REQ_TOKEN = async() => {
-    try{
+    try {
         const getToken = await fetch("https://accounts.spotify.com/api/token", {
             method: 'POST',
             headers: {
@@ -10,13 +10,14 @@ export const REQ_TOKEN = async() => {
             
           })
 
-          if(getToken.status === 200 || 404) {
-            console.log('Mirá máquina, estás haciendo todo como el orto', getToken.status)
+          if(getToken.status >= 400) {
+            console.log('Código de error: ' + getToken.status)
           } else {
             const TOKEN = await getToken.json()
             return TOKEN.access_token
           }
-    }catch(error){
+          
+    } catch(error){
         console.log(error)
     }
 }
@@ -30,8 +31,14 @@ const REQ_ALBUMS = async(artistID, offset = 0) => {
                 'Authorization': 'Bearer ' + await REQ_TOKEN()
             }
         })
-        const ALBUMS = await getAlbums.json()
-        return ALBUMS.items
+
+        if(getAlbums.status >= 400) {
+            console.log('Código de error: ' + getAlbums.status)
+        } else{
+            const ALBUMS = await getAlbums.json()
+            return ALBUMS.items
+        }
+
     } catch (error) {
         console.log(error)
     }
@@ -46,8 +53,14 @@ const REQ_TRACKS = async(albumID) => {
                 'Authorization': 'Bearer ' + await REQ_TOKEN()
             }
         })
-        const TRACKS = await getTracks.json()
-        return TRACKS.items
+        
+        if(getTracks.status >= 400) {
+            console.log('Código de error: ' + getAlbums.status)
+        } else {
+            const TRACKS = await getTracks.json()
+            return TRACKS.items
+        }
+
     } catch (error) {
         console.log(error)
     }
