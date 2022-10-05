@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+body {
+    background: #282828;
+    font-family: Arial, Helvetica, sans-serif;
+    /* overflow-y: hidden; */
+    user-select: none;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.cont {
+    background: #101010;
+    box-shadow: 0 0 .2rem #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.06rem;
+    transition: 0.2s all;
+    width: 30%;
+}
+
+.cont:hover {
+    color: #e16b5a;
+    transform: scale(1.01);
+}
+
+.cont:active {
+    transform: scale(0.95);
+}
+
+.nombre-disco {
+    align-items: center;
+    cursor: default;
+    display: flex;
+    font-size: 1.4vw;
+    height: 100%;
+    justify-content: center;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+.play_reproductor {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 1.4rem;
+    /* padding: 1rem; */
+    /* width: 100%; */
+}
+
+.play img {
+    cursor: pointer;
+    height: 2rem;
+    transition: .1s all;
+    width: 2rem;
+}
+
+.play img:active {
+    transform: scale(.95);
+}
+
+.reproductor {
+    width: 100%;
+}
