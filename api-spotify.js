@@ -7,7 +7,6 @@ export const REQ_TOKEN = async() => {
               'Authorization': 'Basic ' + btoa('801007975b0f442cafb3a9be05ca372f:669ee8c593dd4032b76c2b333ed85c3a')
             },
             body: 'grant_type=client_credentials'
-            
           })
 
           if(getToken.status >= 400) {
@@ -55,7 +54,7 @@ const REQ_TRACKS = async(albumID) => {
         })
         
         if(getTracks.status >= 400) {
-            console.log('Código de error: ' + getAlbums.status)
+            console.log('Código de error: ' + getTracks.status)
         } else {
             const TRACKS = await getTracks.json()
             return TRACKS.items
