@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0.06rem;
-    transition: 0.2s all;
+    transition: .1s transform;
     width: 30%;
 }
 
@@ -45,26 +45,18 @@ body {
 }
 
 .play_reproductor {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 0 1.4rem;
-    /* padding: 1rem; */
-    /* width: 100%; */
 }
 
-.play img {
+.play_reproductor img {
     cursor: pointer;
     height: 2rem;
-    transition: .1s all;
+    margin: 0 50%;
+    transition: .1s transform;
     width: 2rem;
 }
 
-.play img:active {
+.play_reproductor img:active {
     transform: scale(.95);
-}
-
-.reproductor {
-    width: 100%;
 }
