@@ -8,7 +8,8 @@ body {
 }
 
 main {
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .contenedor {
@@ -47,32 +48,10 @@ main {
     text-align: center;
 }
 
-.play_reproductor {
-    position: relative;
-}
-
-.reproductor {
-    left: -8.5rem;
-    position: absolute;
-    width: calc(100% + 8.5rem)
-}
-
-.play_reproductor img {
-    cursor: pointer;
-    height: 2rem;
-    margin: 0 50%;
-    position: absolute;
-    transition: .1s transform;
-    width: 2rem;
-}
-
-.play_reproductor img:active {
-    transform: scale(.95);
-}
-
 .repSpotify {
     height: 9.5rem;
-    width: 100%;
+    margin-left: -8.5rem;
+    width: calc(100% + 8.5rem);
 }
 
 @media screen and (max-width: 425px) {
@@ -82,11 +61,17 @@ main {
     }
 
     .cont {
-        width: 70%;
+        width: 75%;
         margin: 0.4rem 0;
     }
 
     .nombre-disco {
         font-size: 2vh;
+    }
+
+    .repSpotify {
+        height: 8.5rem;
+        margin-left: -4.5rem;
+        width: calc(100% + 4.5rem);
     }
 }

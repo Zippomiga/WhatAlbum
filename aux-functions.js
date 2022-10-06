@@ -11,7 +11,7 @@ const random = (x) => Math.floor(Math.random() * Object.values(x).length)
 const buildDivs = (albums, arr, conts) => {
     for(let i = 0; i < conts.length; i++) {
         document.querySelector(`.cont${i}`).innerHTML = `
-        <img src="${albums[arr[i]].images[0].url}">
+        <img src="${albums[arr[i]].images[0].url}" class="${albums[arr[i]].id}">
         <span class="nombre-disco">${albums[arr[i]].name}</span>
         `
     }
@@ -19,7 +19,7 @@ const buildDivs = (albums, arr, conts) => {
 
 const repSpotify = (idTrack) => { 
     document.querySelector('.reproductor').innerHTML = `
-        <iframe src="https://open.spotify.com/embed/track/${idTrack}?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="repSpotify"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/${idTrack}?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="repSpotify"></iframe>
         `
 }
 
