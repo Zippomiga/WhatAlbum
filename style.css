@@ -60,6 +60,7 @@ main {
 @media screen and (max-width: 425px) {
     main {
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .contenedor {
