@@ -1,4 +1,4 @@
-export const REQ_TOKEN = async() => {
+const REQ_TOKEN = async() => {
     try {
         const getToken = await fetch("https://accounts.spotify.com/api/token", {
             method: 'POST',
@@ -66,6 +66,7 @@ const REQ_TRACKS = async(albumID) => {
 }
 
 export const Api = {
+    REQ_TOKEN,
     REQ_ALBUMS,
     REQ_TRACKS
 }
