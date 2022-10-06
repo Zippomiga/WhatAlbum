@@ -9,6 +9,7 @@ const conts = document.querySelectorAll('.cont')
 const ALBUMS = await Api.REQ_ALBUMS(...TheBeatles)
 
 let albumR;
+let trackR;
 
 async function init() {
     const arr = Aux.nsRandoms(ALBUMS)
@@ -17,7 +18,7 @@ async function init() {
     Aux.buildDivs(ALBUMS, arr, conts)
 
     const TRACKS = await Api.REQ_TRACKS(ALBUMS[albumR].id)
-    const trackR = Aux.random(TRACKS)
+    trackR = Aux.random(TRACKS)
 
     Aux.repSpotify(TRACKS[trackR].id)
 }
@@ -25,13 +26,12 @@ async function init() {
 
 conts.forEach(element => {
     element.addEventListener('click', event => {
-        console.log(event.target.className)
 
         if(ALBUMS[albumR].id === event.target.className) {
-            console.log('JESUS')
+            alert('JESUS')
             init()
         } else {
-            console.log('SATANAS')
+            alert('SATANAS')
             init()
         }
     })
