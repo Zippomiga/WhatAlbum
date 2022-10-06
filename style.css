@@ -74,3 +74,19 @@ main {
     height: 9.5rem;
     width: 100%;
 }
+
+@media screen and (max-width: 425px) {
+    .contenedor {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cont {
+        width: 70%;
+        margin: 0.4rem 0;
+    }
+
+    .nombre-disco {
+        font-size: 2vh;
+    }
+}
