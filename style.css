@@ -3,8 +3,12 @@
 body {
     background: #282828;
     font-family: Arial, Helvetica, sans-serif;
-    /* overflow-y: hidden; */
+    overflow-x: hidden;
     user-select: none;
+}
+
+main {
+    position: relative;
 }
 
 .contenedor {
@@ -15,11 +19,10 @@ body {
 
 .cont {
     background: #101010;
-    box-shadow: 0 0 .2rem #000000;
+    box-shadow: 0 0 .4rem #000000;
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 0.06rem;
     transition: .1s transform;
     width: 30%;
 }
@@ -45,18 +48,29 @@ body {
 }
 
 .play_reproductor {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+}
+
+.reproductor {
+    left: -8.5rem;
+    position: absolute;
+    width: calc(100% + 8.5rem)
 }
 
 .play_reproductor img {
     cursor: pointer;
     height: 2rem;
     margin: 0 50%;
+    position: absolute;
     transition: .1s transform;
     width: 2rem;
 }
 
 .play_reproductor img:active {
     transform: scale(.95);
+}
+
+.repSpotify {
+    height: 9.5rem;
+    width: 100%;
 }
