@@ -15,7 +15,6 @@ main {
 .contenedor {
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
 }
 
 .cont {
@@ -61,8 +60,8 @@ main {
     }
 
     .cont {
-        width: 75%;
         margin: 0.4rem 0;
+        width: 75%;
     }
 
     .nombre-disco {

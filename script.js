@@ -23,11 +23,9 @@ async function init() {
     Aux.repSpotify(TRACKS[trackR].id)
 }
 
-
 conts.forEach(element => {
     element.addEventListener('click', event => {
-
-        if(ALBUMS[albumR].id === event.target.className) {
+        if(ALBUMS[albumR].id === event.target.className || ALBUMS[albumR].name === event.target.innerText) {
             alert('JESUS')
             init()
         } else {
