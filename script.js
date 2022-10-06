@@ -1,4 +1,4 @@
-import {Api} from '/api-spotify.js'
+import {Api} from './api-spotify.js'
 import {Aux} from './aux-functions.js'
 
 const TheBeatles = ['3WrFJ7ztbogyGnTHbHJFl2', 10]
