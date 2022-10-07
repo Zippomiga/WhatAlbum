@@ -22,7 +22,7 @@ main {
     display: flex;
     flex-direction: column;
     transition: .1s all;
-    width: 30%;
+    width: 33%;
 }
 
 .cont:hover {
@@ -91,7 +91,7 @@ main {
 
     .cont {
         margin: 0.4rem 0;
-        width: 60%;
+        width: 100%;
     }
 
     .nombre-disco {
