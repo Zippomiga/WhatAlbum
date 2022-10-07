@@ -54,12 +54,12 @@ main {
     width: calc(100% + 8.5rem);
 }
 
-.opciones_artistas {
+.artists {
     display: flex;
     justify-content: space-evenly;
 }
 
-.opciones_artistas button {
+.artists button {
     background: #101010;
     box-shadow: 0 0 .2rem #000000;
     border: none;
@@ -69,13 +69,13 @@ main {
     transition: .1s all;
 }
 
-.opciones_artistas button:hover {
+.artists button:hover {
     background: #e16b5a;
     color: #000000;
     cursor: pointer;
 }
 
-.opciones_artistas button:active {
+.artists button:active {
     transform: scale(0.95);
 }
 
@@ -87,11 +87,12 @@ main {
     .contenedor {
         align-items: center;
         flex-direction: column;
+        order: 1;
     }
 
     .cont {
         margin: 0.4rem 0;
-        width: 100%;
+        width: 93%;
     }
 
     .nombre-disco {
@@ -100,6 +101,7 @@ main {
 
     .reproductor {
         height: 5rem;
+        order: 0;
     }
 
     .repSpotify {
@@ -107,11 +109,12 @@ main {
         width: calc(100% + 4.5rem);
     }
 
-    .opciones_artistas {
+    .artists {
         margin: 1rem 0;
+        order: 3;
     }
 
-    .opciones_artistas button {
+    .artists button {
         padding: .5rem;
         font-size: 2vh;
     }
