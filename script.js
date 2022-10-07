@@ -17,7 +17,6 @@ const conts = document.querySelectorAll('.cont')
 artists.forEach(element => {
     element.addEventListener('click', async(event) => {
         const [, x] = event.target.className.split(' ')
-        console.log(x)
         ALBUMS = await Api.REQ_ALBUMS(...ARTISTAS[x])
         init()
     })
@@ -25,7 +24,7 @@ artists.forEach(element => {
 
 conts.forEach(element => {
     element.addEventListener('click', event => {
-        if(ALBUMS[albumR].id === event.target.className || ALBUMS[albumR].name === event.target.innerText) {
+        if(ALBUMS[albumR].id === event.target.className || ALBUMS[albumR].name === event.target.className) {
             alert('JESUS')
             init()
         } else {

@@ -34,7 +34,7 @@ main {
     transform: scale(0.95);
 }
 
-.nombre-disco {
+.cont span {
     align-items: center;
     display: flex;
     font-size: 1.4vw;
@@ -51,7 +51,7 @@ main {
 .repSpotify {
     height: 100%;
     margin-left: -8.5rem;
-    width: calc(100% + 8.5rem);
+    width: calc(100% + 8.7rem);
 }
 
 .artists {
@@ -84,6 +84,10 @@ main {
 }
 
 @media screen and (max-width: 425px) {
+    main {
+        margin: 0;
+    }
+
     .contenedor {
         align-items: center;
         flex-direction: column;
@@ -91,13 +95,14 @@ main {
     }
 
     .cont {
+        align-items: center;
         margin: 0.4rem 0;
         width: 93%;
     }
 
-    .nombre-disco {
+    .cont span {
         font-size: 2vh;
-    }
+    }    
 
     .reproductor {
         height: 5rem;
@@ -105,8 +110,8 @@ main {
     }
 
     .repSpotify {
-        margin-left: -4.5rem;
-        width: calc(100% + 4.5rem);
+        margin-left: -5rem;
+        width: calc(100% + 5.2rem);
     }
 
     .artists {
