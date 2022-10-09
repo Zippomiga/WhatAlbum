@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: #202020;
+    color: white;
+    font-family: 'Poppins';
+    user-select: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+
+h1 img {
+    height: 2rem;
+    filter: invert(100%);
+    left: 1rem;
+    position: absolute;
+    width: 2rem;
+}
+
+.lista-albums {
+    display: grid;
+    gap: .4rem;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0.4rem;
+}
+
+.album {
+    box-shadow: 0 0 .2rem #000000;
+    display: flex;
+    font-size: .9rem;
+    font-weight: bold;
+    position: relative;
+    transition: .1s;
+}
+
+
+.album::after {
+    background: #009e00;
+    color: #ffffff;
+    content: '✓';
+    height: 1rem;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 1rem;
+    z-index: -1;
+}
+
+.album:hover {
+    background: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    filter: brightness(75%);
+}
+
+.album:active {
+    transform: scale(.99);
+}
+
+.album img {
+    height: 8rem;
+    width: 8rem;
+}
+
+.album span {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.album-disabled {
+    background: #000000;
+    filter: brightness(25%);
+}
+
+.album-disabled::after {
+    background: #ff0000;
+    content: '✖';
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.botones button {
+    background: #000000;
+    border: none;
+    box-shadow: 0 0 .2rem #000000;
+    color: #ffffff;
+    padding: .5rem 0;
+    transition: .1s;
+    width: 20%;
+}
+
+.botones button:hover {
+    background: #e16b5a;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .lista-albums {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .lista-albums {
+        grid-template-columns: 100%;
+    }
+
+    .album {
+        font-size: .8rem;
+    }
+
+    .album::after {
+        height: .9rem;
+        width: .9rem;
+    }
+
+    .album img {
+        height: 6rem;
+        width: 6rem;
+    }
+}
