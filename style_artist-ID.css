@@ -19,8 +19,8 @@ h1 {
 }
 
 h1 img {
-    height: 2rem;
     filter: invert(100%);
+    height: 2rem;
     left: 1rem;
     position: absolute;
     width: 2rem;
@@ -33,7 +33,8 @@ div {
 }
 
 div form {
-    border: 1px solid #ffffff;
+    border: 1px solid #e16b5a;
+    justify-content: space-between;
     display: flex;
     margin-bottom: 1rem;
     width: 100%;
@@ -42,7 +43,7 @@ div form {
 div input {
     background: #f0f0f0;
     border: none;
-    color: #000000;
+    color: #e16b5a;
     font-size: 1.5rem;
     outline: none;
     padding: .5rem;

@@ -1,15 +1,9 @@
 import { Api } from "./api-spotify.js";
 
-const TheBeatles = '3WrFJ7ztbogyGnTHbHJFl2'
-const LosRedondos = '6byQKddO1b34lXC2ZEjehQ'
-const SodaStereo = '7An4yvF7hDYDolN4m5zKBp'
-const Coldplay = '4gzpq5DPGxSnKTe4SA8HAU'
-const LedZeppelin = '36QJpDe2go2KgaRleHCDTp'
-const Queen = '1dfeR4HaWDbWqFHLkxsg1d'
+const ID = localStorage.getItem('ID')
 
- 
-const ALBUMS = await Api.REQ_ALBUMS(TheBeatles)
-console.log(ALBUMS)
+const ALBUMS = await Api.REQ_ALBUMS(ID)
+
 const listaAlbums = document.querySelector('.lista-albums')
 
 for(let i = ALBUMS.length-1; i >= 0; i--) {
@@ -23,7 +17,6 @@ for(let i = ALBUMS.length-1; i >= 0; i--) {
 }
 
 const albumNodes = document.querySelectorAll('.album')
-// console.log(albumNodes)
 
 albumNodes.forEach(element => {
     element.addEventListener('click', event => {
@@ -42,8 +35,7 @@ const filtrarAlbums = () => {
             }
         }
     }
-    console.table(albums)
-    return albums
+    localStorage.setItem('ALBUMS', JSON.stringify(albums))
 }
 
 function resetAlbums() {
@@ -54,3 +46,4 @@ function resetAlbums() {
 
 document.querySelector('.get-albums').addEventListener('click', filtrarAlbums)
 document.querySelector('.reset-albums').addEventListener('click', resetAlbums)
+document.querySelector('.play').addEventListener('click', () => {window.location.href = "./app.html"})
