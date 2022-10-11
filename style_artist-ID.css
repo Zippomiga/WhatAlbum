@@ -52,7 +52,7 @@ div input {
 }
 
 div input::placeholder {
-    color: #c8c8c8cc;
+    color: #e16c5a80;
 }
 
 div button {
@@ -60,7 +60,7 @@ div button {
     border: none;
     color: #ffffff;
     cursor: pointer;
-    transition: .1s;
+    transition: .2s;
     width: 15%;
 }
 
