@@ -21,9 +21,9 @@ const REQ_TOKEN = async() => {
     }
 }
 
-const REQ_ALBUMS = async(artistID, offset = 0) => {
+const REQ_ALBUMS = async(artistID) => {
     try {
-        const getAlbums = await fetch(`https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=ES&limit=50&offset=${offset}`, {
+        const getAlbums = await fetch(`https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=ES&limit=50&offset=0`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const REQ_ALBUMS = async(artistID, offset = 0) => {
 
         if(getAlbums.status >= 400) {
             console.log('Código de error: ' + getAlbums.status)
-        } else{
+        } else {
             const ALBUMS = await getAlbums.json()
             return ALBUMS.items
         }

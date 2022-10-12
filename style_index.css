@@ -60,7 +60,7 @@ div input {
 }
 
 div input::placeholder {
-    color: #e16c5a80;
+    color: #e16c5a4d;
 }
 
 div button {
@@ -106,7 +106,11 @@ div img {
         position: initial;
     }
 
-    div input, div button, div p {
+    div input, div p {
         font-size: 2vh
+    }
+
+    div button {
+        font-size: 1.5vh;
     }
 }

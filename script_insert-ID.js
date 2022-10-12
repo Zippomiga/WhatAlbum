@@ -1,8 +1,23 @@
-const capturarID = document.querySelector('.insert-ID')
+import { Api } from "./api-spotify.js"
 
-capturarID.addEventListener('click', event => {
+const input_ID = document.querySelector('.input-ID')
+const btnCapturar_ID = document.querySelector('.insert-ID')
+
+input_ID.addEventListener('click', () => {
+        input_ID.value = ''
+})
+
+btnCapturar_ID.addEventListener('click', async(event) => {
     event.preventDefault()
-    const input_id = document.querySelector('.input-ID').value
-    localStorage.setItem('ID', input_id)
-    window.location.href = "./select-albums.html"
+    const ID = document.querySelector('.input-ID').value
+    const ALBUMS = await Api.REQ_ALBUMS(ID)
+
+    if(input_ID.value === '') {
+        input_ID.value = 'Por favor, inserte un ID 🙏'
+    } else if(!ALBUMS) {
+        input_ID.value = 'ID inválido 😭'
+    } else {
+        localStorage.setItem('ALBUMS', JSON.stringify(ALBUMS))
+        window.location.href = "./select-albums.html"
+    }
 })

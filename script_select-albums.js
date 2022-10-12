@@ -1,8 +1,6 @@
-import { Api } from "./api-spotify.js";
 import { Aux } from "./aux-functions.js";
 
-const ID = localStorage.getItem('ID')
-const ALBUMS = await Api.REQ_ALBUMS(ID)
+const ALBUMS = JSON.parse(localStorage.getItem('ALBUMS'))
 
 let albumsLS;
 let contAux = ALBUMS.length
