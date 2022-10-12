@@ -5,7 +5,19 @@ const ALBUMS = JSON.parse(localStorage.getItem('ALBUMS'))
 const conts = document.querySelectorAll('.cont')
 
 let albumR;
-let trackR;
+let trackR; 
+
+conts.forEach(element => {
+    element.addEventListener('click', event => {
+        console.log(event.target.className)
+        if(event.target.className === ALBUMS[albumR].id || event.target.className === ALBUMS[albumR].album) {
+            alert('JESUS')
+        } else {
+            alert('SATANAS')
+        }
+        init()
+    })
+})
 
 async function init() {
     const arr = Aux.nsRandoms(ALBUMS)
@@ -19,15 +31,7 @@ async function init() {
     Aux.repSpotify(TRACKS[trackR].id)
 }
 
-conts.forEach(element => {
-    element.addEventListener('click', event => {
-        if(event.target.className === ALBUMS[albumR].id || event.target.className === ALBUMS[albumR].album) {
-            alert('JESUS')
-        } else {
-            alert('SATANAS')
-        }
-        init()
-    })
-})
-
 init()
+
+const btnBack = document.querySelector('.back')
+btnBack.addEventListener('click', () => {window.location.href = "./select-albums.html"})

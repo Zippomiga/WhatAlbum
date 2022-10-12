@@ -17,11 +17,20 @@ h1 {
 
 
 h1 img {
-    height: 2rem;
     filter: invert(100%);
+    height: 2rem;
     left: 1rem;
     position: absolute;
+    transition: .1s;
     width: 2rem;
+}
+
+h1 img:hover {
+    transform: scale(1.05);
+}
+
+h1 img:active {
+    transform: scale(1);
 }
 
 .lista-albums {
@@ -58,7 +67,7 @@ h1 img {
     background: #000000;
     cursor: pointer;
     color: #ffffff;
-    filter: brightness(75%);
+    filter: opacity(75%);
 }
 
 .album:active {
@@ -66,7 +75,6 @@ h1 img {
 }
 
 .album img {
-    height: 8rem;
     width: 8rem;
 }
 
@@ -78,12 +86,12 @@ h1 img {
     width: 100%;
 }
 
-.album-disabled {
+.disabled {
     background: #000000;
-    filter: brightness(25%);
+    filter: opacity(25%);
 }
 
-.album-disabled::after {
+.disabled::after {
     background: #ff0000;
     content: '✖';
 }
@@ -94,23 +102,27 @@ h1 img {
     margin: 2rem;
 }
 
-.botones button:hover {
-    background: #e16b5a;
-    cursor: pointer;
-}
-
-.reset-albums, .disable-albums, .filter-albums, .play {
+.reset-albums, .disable-albums, .play {
     background: #000000;
     border: none;
     box-shadow: 0 0 .2rem #000000;
     color: #ffffff;
     padding: .5rem 0;
     transition: .2s;
-    width: 20%;
+    width: 25%;
 }
 
-.filtered {
-    background: #009e00;
+.reset-albums:hover, .disable-albums:hover, .play:hover {
+    background: #e16b5a;
+}
+
+.off {
+    filter: opacity(25%);
+}
+
+.off:hover {
+    background: #000000;
+    cursor: not-allowed;
 }
 
 ::-webkit-scrollbar {
@@ -125,7 +137,15 @@ h1 img {
 
 @media screen and (max-width: 425px) {
     h1 {
-        font-size: 1.4rem;
+        align-items: center;
+        flex-direction: column;
+        font-size: 2.4vh;
+    }
+
+    h1 img {
+        height: 4vh;
+        margin-bottom: 1.4vh;
+        position: initial;
     }
 
     .lista-albums {
@@ -142,7 +162,11 @@ h1 img {
     }
 
     .album img {
-        height: 6rem;
         width: 6rem;
+    }
+
+    .botones {
+        margin: .5rem;
+        font-size: 2vh
     }
 }

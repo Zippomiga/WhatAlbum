@@ -1,22 +1,20 @@
 import { Api } from "./api-spotify.js";
+import { Aux } from "./aux-functions.js";
 
 const ID = localStorage.getItem('ID')
 const ALBUMS = await Api.REQ_ALBUMS(ID)
 
 let albumsLS;
+let contAux = ALBUMS.length
+const minAlbums = 4
 
 const listaAlbums = document.querySelector('.lista-albums')
 const albumNodes = document.querySelector('.lista-albums').childNodes
 
+const btnBack = document.querySelector('.back')
 const btnEnableAll = document.querySelector('.reset-albums')
 const btnDisableAll = document.querySelector('.disable-albums')
-const btnFiltrar = document.querySelector('.filter-albums')
 const btnPlay = document.querySelector('.play')
-
-btnEnableAll.addEventListener('click', enableAll)
-btnDisableAll.addEventListener('click', disableAll)
-btnFiltrar.addEventListener('click', filtrarAlbums)
-btnPlay.addEventListener('click', () => {window.location.href = "./app.html"})
 
 for(let i = ALBUMS.length-1; i >= 0; i--) {
     const li = document.createElement('li')
@@ -30,63 +28,59 @@ for(let i = ALBUMS.length-1; i >= 0; i--) {
 
 albumNodes.forEach(element => {
     element.addEventListener('click', event => {
-        event.target.parentNode.classList.toggle('album-disabled')
-        btnFiltrar.innerText = 'Filtrar Albums'
-        btnFiltrar.classList.remove('filtered')
+        event.target.parentNode.classList.toggle('disabled')
+        
+        if(event.target.parentNode.classList.contains('disabled')) {
+            contAux--
+        } else {
+            contAux++
+        }
+        if(contAux < minAlbums) {
+            btnPlay.classList.add('off')
+        } else {
+            btnPlay.classList.remove('off')
+        }
     })
 })
 
 function enableAll() {
-    localStorage.removeItem('ALBUMS')
-    albumsLS = []
-    for(let i = 0; i < albumNodes.length; i++) {
-        albumNodes[i].classList.remove('album-disabled')
-        albumsLS.push({
-            album: albumNodes[i].innerText, 
-            id: albumNodes[i].classList[1], 
-            tapa: albumNodes[i].children[0].currentSrc
-        })
-    }
-    btnFiltrar.innerText = 'Filtrar Albums'
-    btnFiltrar.classList.remove('filtered')
-    localStorage.setItem('ALBUMS', JSON.stringify(albumsLS))
+    albumsLS = {}
+    Aux.addAlbums(albumNodes, albumsLS)
+
+    albumNodes.forEach(element => {
+        element.classList.remove('disabled')
+    })
+
+    btnPlay.classList.remove('off')
+    contAux = ALBUMS.length
 }
 
 function disableAll() {
-    localStorage.removeItem('ALBUMS')
-    albumsLS = []
+    albumsLS = {}
+    Aux.addAlbums(albumNodes, albumsLS)
+
     albumNodes.forEach(element => {
-        element.classList.add('album-disabled')
+        element.classList.add('disabled')
     })
-    btnFiltrar.innerText = 'Filtrar Albums'
-    btnFiltrar.classList.remove('filtered')
+
+    btnPlay.classList.add('off')
+    contAux = 0
 }
 
-function filtrarAlbums() {
-    localStorage.removeItem('ALBUMS')
-    albumsLS = []
-    for(let i = 0; i < albumNodes.length; i++) {
-        if(!albumNodes[i].classList.contains('album-disabled')) {
-            albumsLS.push({
-                album: albumNodes[i].innerText, 
-                id: albumNodes[i].classList[1], 
-                tapa: albumNodes[i].children[0].currentSrc
-            })
-        }
+function play() {
+    albumsLS = {}
+    Aux.addAlbums(albumNodes, albumsLS)
+
+    if(Object.values(albumsLS).length < minAlbums) {
+        alert(`Selecciona al menos ${minAlbums} albums`)
+    } else {
+        localStorage.removeItem('ALBUMS')
+        localStorage.setItem('ALBUMS', JSON.stringify(albumsLS))
+        window.location.href = "./app.html"
     }
-    btnFiltrar.innerText = 'Filtrado!'
-    btnFiltrar.classList.add('filtered')
-    localStorage.setItem('ALBUMS', JSON.stringify(albumsLS))
 }
 
-
-
-// function btnFilterText() {
-//     if() {
-//         btnFiltrar.innerText = 'Filtrado!'
-//         btnFiltrar.classList.add('filtered')
-//     } else {
-//         btnFiltrar.innerText = 'Filtrar Albums'
-//         btnFiltrar.classList.remove('filtered')
-//     }
-// }
+btnBack.addEventListener('click', () => {window.location.href = "./index.html"})
+btnEnableAll.addEventListener('click', enableAll)
+btnDisableAll.addEventListener('click', disableAll)
+btnPlay.addEventListener('click', play)

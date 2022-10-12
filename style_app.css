@@ -2,19 +2,39 @@
 
 body {
     background: #202020;
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins';
     user-select: none;
 }
 
-main {
+h1 {
     display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+    justify-content: flex-start;
+    padding: 0 1rem;
+}
+
+h1 img {
+    filter: invert(100%);
+    height: 2rem;
+    transition: .1s;
+    width: 2rem;
+}
+
+h1 img:hover {
+    transform: scale(1.05);
+}
+
+h1 img:active {
+    transform: scale(1);
 }
 
 .contenedor {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: center;
+    margin: 0 1rem 1rem 1rem;
 }
 
 .cont {
@@ -23,7 +43,6 @@ main {
     display: flex;
     flex-direction: column;
     transition: .1s all;
-    width: 33%;
 }
 
 .cont:hover {
@@ -38,46 +57,34 @@ main {
 .cont span {
     align-items: center;
     display: flex;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     height: 100%;
     justify-content: center;
-    padding: 0.2rem;
+    padding: .5rem 1rem;
     text-align: center;
+    width: 100%;
 }
 
 .reproductor {
+    position: relative;
     height: 9.5rem;
+}
+
+.reproductor::after {
+    background: transparent;
+    bottom: 54%;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
 }
 
 .repSpotify {
     height: 100%;
     margin-left: -8.5rem;
-    width: calc(100% + 8.7rem);
-}
-
-.artists {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.artists button {
-    background: #000000;
-    box-shadow: 0 0 .2rem #000000;
-    border: none;
-    color: #ffffff;
-    font-size: 1.4vw;
-    padding: 1rem;
-    transition: .1s all;
-}
-
-.artists button:hover {
-    background: #e16b5a;
-    color: #000000;
-    cursor: pointer;
-}
-
-.artists button:active {
-    transform: scale(0.95);
+    width: calc(100% + 8.5rem);
 }
 
 ::-webkit-scrollbar {
@@ -85,41 +92,57 @@ main {
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     .contenedor {
-        align-items: center;
-        flex-direction: column;
-        margin: 0;
-        order: 1;
+        grid-template-columns: 50% 50%;
     }
 
     .cont {
-        align-items: center;
-        margin: 0.4rem 0;
-        width: 93%;
+        flex-direction: row;
+    }
+
+    .cont img {
+        width: 50%;
+    }
+
+    .cont span {
+        font-size: 2vh;
+    }
+
+    .reproductor {
+        height: 5rem;
+    }
+
+    .repSpotify {
+        margin-left: -5rem;
+        width: calc(100% + 5rem);
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    h1 {
+        justify-content: center;
+        order: 2;
+        padding: 0;
+    }
+
+    h1 img {
+        height: 4vh;
+    }
+
+    .contenedor {
+        gap: 0.5rem;
+        grid-template-columns: 100%;
+        margin: .4rem;
+        order: 1;
+    }
+
+    .cont img {
+        width: 30%;
     }
 
     .cont span {
         font-size: 2vh;
     }    
-
-    .reproductor {
-        height: 5rem;
-        order: 0;
-    }
-
-    .repSpotify {
-        margin-left: -5rem;
-        width: calc(100% + 5.2rem);
-    }
-
-    .artists {
-        margin: 1rem 0;
-        order: 3;
-    }
-
-    .artists button {
-        padding: .5rem;
-        font-size: 2vh;
-    }
 }
