@@ -68,13 +68,13 @@ h1 img:active {
 
 .reproductor {
     height: 9.5rem;
-    margin-top: -4.5rem;
+    margin-top: -6rem;
     position: relative;
 }
 
 .reproductor::before {
     background: #202020;
-    bottom: 54%;
+    bottom: 36%;
     content: '';
     left: 0;
     position: absolute;
@@ -123,6 +123,10 @@ h1 img:active {
     .reproductor {
         height: 5rem;
         margin-top: -2rem;
+    }
+
+    .reproductor::before {
+        bottom: 55%;
     }
 
     .repSpotify {
