@@ -35,6 +35,7 @@ h1 img:active {
     grid-template-columns: 25% 25% 25% 25%;
     justify-content: center;
     margin: 0 1rem 1rem 1rem;
+    z-index: 1;
 }
 
 .cont {
@@ -66,17 +67,29 @@ h1 img:active {
 }
 
 .reproductor {
-    position: relative;
     height: 9.5rem;
+    margin-top: -4.5rem;
+    position: relative;
 }
 
-.reproductor::after {
+.reproductor::before {
+    background: #202020;
     bottom: 54%;
     content: '';
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.reproductor::after {
+    background: #202020;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 93%;
 }
 
 .repSpotify {
@@ -104,11 +117,12 @@ h1 img:active {
     }
 
     .cont span {
-        font-size: 2vh;
+        font-size: 2vw;
     }
 
     .reproductor {
         height: 5rem;
+        margin-top: -2rem;
     }
 
     .repSpotify {
@@ -133,7 +147,7 @@ h1 img:active {
         gap: 0.5rem;
         grid-template-columns: 100%;
         margin: .4rem;
-        order: 1;
+        /* order: 1; */
     }
 
     .cont img {
@@ -142,5 +156,5 @@ h1 img:active {
 
     .cont span {
         font-size: 2vh;
-    }    
+    }
 }

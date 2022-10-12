@@ -39,6 +39,8 @@ function repSpotify(idTrack) {
         `
 }
 
+// <---------------EXPORT--------------->
+
 export const Aux = {
     addAlbums,
     nsRandoms,
