@@ -130,6 +130,18 @@ h1 img:active {
 }
 
 @media screen and (max-width: 768px) {
+    h1 {
+        align-items: center;
+        flex-direction: column;
+        font-size: 3vh;
+    }
+
+    h1 img {
+        height: 4vh;
+        margin-bottom: 1.4vh;
+        position: initial;
+    }
+
     .lista-albums {
         grid-template-columns: 50% 50%;
     }
@@ -137,15 +149,7 @@ h1 img:active {
 
 @media screen and (max-width: 425px) {
     h1 {
-        align-items: center;
-        flex-direction: column;
         font-size: 2.4vh;
-    }
-
-    h1 img {
-        height: 4vh;
-        margin-bottom: 1.4vh;
-        position: initial;
     }
 
     .lista-albums {
