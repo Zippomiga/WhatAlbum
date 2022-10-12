@@ -2,7 +2,7 @@
 
 ![Insert-ID](https://user-images.githubusercontent.com/101211643/195449939-7328f39c-5688-4659-abed-9a095e836f94.png)
 
-    2) Filtre los albums con los que desee jugar
+    2) Filtre los albums con los que desee jugar (al menos 4 albums)
 
 ![Select-Albums](https://user-images.githubusercontent.com/101211643/195449959-3b74dab4-8bd2-4cd8-81bb-b04d3d795793.png)
 
