@@ -71,14 +71,12 @@ h1 img:active {
 }
 
 .reproductor::after {
-    background: transparent;
     bottom: 54%;
     content: '';
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1;
 }
 
 .repSpotify {
