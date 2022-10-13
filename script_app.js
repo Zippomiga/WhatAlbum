@@ -34,4 +34,4 @@ async function init() {
 init()
 
 const btnBack = document.querySelector('.back')
-btnBack.addEventListener('click', () => {window.location.href = "./select-albums.html"})
+btnBack.addEventListener('click', () => {window.location.href = "./index.html"})

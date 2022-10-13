@@ -35,11 +35,9 @@ function buildDivs(albums, arr, conts) {
 
 function repSpotify(idTrack) { 
     document.querySelector('.reproductor').innerHTML = `
-        <iframe src="https://open.spotify.com/embed/track/${idTrack}?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="repSpotify"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/${idTrack}?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; fullscreen; picture-in-picture" loading="lazy" class="repSpotify"></iframe>
         `
 }
-
-// <---------------EXPORT--------------->
 
 export const Aux = {
     addAlbums,
