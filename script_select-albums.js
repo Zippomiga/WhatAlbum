@@ -2,7 +2,6 @@ import { Aux } from "./aux-functions.js";
 
 const ALBUMS = JSON.parse(localStorage.getItem('ALBUMS'))
 
-let albumsLS;
 let contAux = ALBUMS.length
 const minAlbums = 4
 
@@ -14,15 +13,7 @@ const btnEnableAll = document.querySelector('.reset-albums')
 const btnDisableAll = document.querySelector('.disable-albums')
 const btnPlay = document.querySelector('.play')
 
-for(let i = ALBUMS.length-1; i >= 0; i--) {
-    const li = document.createElement('li')
-    li.classList.add('album', `${ALBUMS[i].id}`)
-    listaAlbums.appendChild(li)
-    li.innerHTML = `
-        <img src="${ALBUMS[i].images[0].url}">
-        <span>${ALBUMS[i].name}</span>
-    `
-}
+Aux.buildAlbumsList(ALBUMS, listaAlbums)
 
 albumNodes.forEach(element => {
     element.addEventListener('click', event => {
@@ -42,9 +33,6 @@ albumNodes.forEach(element => {
 })
 
 function enableAll() {
-    albumsLS = {}
-    Aux.addAlbums(albumNodes, albumsLS)
-
     albumNodes.forEach(element => {
         element.classList.remove('disabled')
     })
@@ -54,9 +42,6 @@ function enableAll() {
 }
 
 function disableAll() {
-    albumsLS = {}
-    Aux.addAlbums(albumNodes, albumsLS)
-
     albumNodes.forEach(element => {
         element.classList.add('disabled')
     })
@@ -66,8 +51,7 @@ function disableAll() {
 }
 
 function play() {
-    albumsLS = {}
-    Aux.addAlbums(albumNodes, albumsLS)
+    const albumsLS = Aux.addAlbums(albumNodes)
 
     if(Object.values(albumsLS).length < minAlbums) {
         alert(`Selecciona al menos ${minAlbums} albums`)

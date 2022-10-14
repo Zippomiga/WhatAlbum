@@ -9,7 +9,6 @@ let trackR;
 
 conts.forEach(element => {
     element.addEventListener('click', event => {
-        console.log(event.target.className)
         if(event.target.className === ALBUMS[albumR].id || event.target.className === ALBUMS[albumR].album) {
             alert('JESUS')
         } else {

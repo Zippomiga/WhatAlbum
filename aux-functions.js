@@ -1,16 +1,31 @@
 // <---------------script_insert-ID.js--------------->
 
-function addAlbums(albumNodes, albumsLS) {
+const addAlbums = (albumNodes) => {
+    const albums = {}
     for(let i = 0; i < albumNodes.length; i++) {
         if(!albumNodes[i].classList.contains('disabled')) {
-            albumsLS[i] = {
+            albums[i] = {
                 album: albumNodes[i].innerText, 
                 id: albumNodes[i].classList[1], 
                 tapa: albumNodes[i].children[0].currentSrc
             }
         }
     }
+    return albums
 }
+
+// <---------------script_select-albums.js--------------->
+
+function buildAlbumsList(albums, lista) {
+    for(let i = albums.length-1; i >= 0; i--) {
+        const li = document.createElement('li')
+        li.classList.add('album', `${albums[i].id}`)
+        lista.appendChild(li)
+        li.innerHTML = `
+            <img src="${albums[i].images[0].url}">
+            <span>${albums[i].name}</span>
+        `
+}}
 
 // <---------------script_app.js--------------->
 
@@ -41,6 +56,7 @@ function repSpotify(idTrack) {
 
 export const Aux = {
     addAlbums,
+    buildAlbumsList,
     nsRandoms,
     random,
     buildDivs,
