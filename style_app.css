@@ -72,7 +72,7 @@ h1 img:active {
 }
 
 .reproductor::before {
-    bottom: 48%;
+    bottom: -.4rem;
     content: '';
     left: 0;
     position: absolute;
@@ -82,7 +82,7 @@ h1 img:active {
 
 .reproductor::after {
     border-top-right-radius: .75rem;
-    bottom: 80%;
+    bottom: 59%;
     content: '';
     left: calc(100% - 2.8rem);
     position: absolute;
