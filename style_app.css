@@ -12,6 +12,7 @@ h1 {
     display: flex;
     justify-content: flex-start;
     padding: 0 1rem;
+    z-index: 1;
 }
 
 h1 img {
@@ -90,6 +91,7 @@ h1 img:active {
 }
 
 .repSpotify {
+    margin-bottom: -5rem;
     margin-left: -5rem;
     width: calc(100% + 5rem);
 }
