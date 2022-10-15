@@ -1,7 +1,7 @@
 import { Api } from './api-spotify.js'
 import { Aux } from './aux-functions.js'
 
-const ALBUMS = JSON.parse(localStorage.getItem('Filtered'))
+const ALBUMS = JSON.parse(localStorage.getItem('Filtrados'))
 const conts = document.querySelectorAll('.cont')
 
 let albumR;

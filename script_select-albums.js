@@ -1,9 +1,9 @@
 import { Aux } from "./aux-functions.js";
 
-const ALBUMS = JSON.parse(localStorage.getItem('ALBUMS'))
+const ALBUMS = JSON.parse(localStorage.getItem('Albums'))
+const minAlbums = 4
 
 let contAux = ALBUMS.length
-const minAlbums = 4
 
 const listaAlbums = document.querySelector('.lista-albums')
 const albumNodes = document.querySelector('.lista-albums').childNodes
@@ -51,12 +51,11 @@ function disableAll() {
 }
 
 function play() {
-    const albumsLS = JSON.stringify(Aux.addAlbums(albumNodes))
-
+    const albumsLS = Aux.addAlbums(albumNodes)
     if(Object.values(albumsLS).length < minAlbums) {
-        alert(`Selecciona al menos ${minAlbums} albums`)
+        alert(`Selecciona al menos ${minAlbums - contAux} ${(contAux === 3)? 'album' : 'albums'}`)
     } else {
-        localStorage.setItem('Filtered', albumsLS)
+        localStorage.setItem('Filtrados', JSON.stringify(albumsLS))
         window.location.href = "./app.html"
     }
 }

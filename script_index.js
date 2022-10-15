@@ -17,7 +17,7 @@ btnCapturar_ID.addEventListener('click', async(event) => {
     } else if(!ALBUMS) {
         input_ID.value = 'ID inválido 😭'
     } else {
-        localStorage.setItem('ALBUMS', ALBUMS)
+        localStorage.setItem('Albums', ALBUMS)
         window.location.href = "./select-albums.html"
     }
 })

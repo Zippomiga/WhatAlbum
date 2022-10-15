@@ -18,22 +18,6 @@ h1 {
     width: 100%;
 }
 
-h1 img {
-    filter: invert(100%);
-    height: 2rem;
-    left: 1rem;
-    position: absolute;
-    width: 2rem;
-}
-
-h1 img:hover {
-    transform: scale(1.05);
-}
-
-h1 img:active {
-    transform: scale(1);
-}
-
 div {
     align-items: center;
     display: flex;
@@ -79,6 +63,7 @@ div button:hover {
 div p {
     font-style: italic;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 div img {
@@ -98,12 +83,6 @@ div img {
         align-items: center;
         flex-direction: column;
         font-size: 2.4vh;
-    }
-
-    h1 img {
-        height: 4vh;
-        margin-bottom: 1.4vh;
-        position: initial;
     }
 
     div input, div p {
