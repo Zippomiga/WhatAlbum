@@ -1,7 +1,7 @@
 import { Api } from './api-spotify.js'
 import { Aux } from './aux-functions.js'
 
-const ALBUMS = JSON.parse(localStorage.getItem('ALBUMS'))
+const ALBUMS = JSON.parse(localStorage.getItem('Filtered'))
 const conts = document.querySelectorAll('.cont')
 
 let albumR;
@@ -33,4 +33,4 @@ async function init() {
 init()
 
 const btnBack = document.querySelector('.back')
-btnBack.addEventListener('click', () => {window.location.href = "./index.html"})
+btnBack.addEventListener('click', () => {window.location.href = "./select-albums.html"})

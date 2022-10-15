@@ -51,13 +51,12 @@ function disableAll() {
 }
 
 function play() {
-    const albumsLS = Aux.addAlbums(albumNodes)
+    const albumsLS = JSON.stringify(Aux.addAlbums(albumNodes))
 
     if(Object.values(albumsLS).length < minAlbums) {
         alert(`Selecciona al menos ${minAlbums} albums`)
     } else {
-        localStorage.removeItem('ALBUMS')
-        localStorage.setItem('ALBUMS', JSON.stringify(albumsLS))
+        localStorage.setItem('Filtered', albumsLS)
         window.location.href = "./app.html"
     }
 }
