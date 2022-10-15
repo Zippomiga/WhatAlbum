@@ -10,14 +10,14 @@ input_ID.addEventListener('click', () => {
 btnCapturar_ID.addEventListener('click', async(event) => {
     event.preventDefault()
     const ID = document.querySelector('.input-ID').value
-    const ALBUMS = JSON.stringify(await Api.REQ_ALBUMS(ID))
+    const ALBUMS = await Api.REQ_ALBUMS(ID)
 
     if(input_ID.value === '') {
         input_ID.value = 'Por favor, inserte un ID 🙏'
     } else if(!ALBUMS) {
         input_ID.value = 'ID inválido 😭'
     } else {
-        localStorage.setItem('Albums', ALBUMS)
+        localStorage.setItem('Albums', JSON.stringify(ALBUMS))
         window.location.href = "./select-albums.html"
     }
 })
