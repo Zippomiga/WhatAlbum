@@ -38,7 +38,7 @@ const REQ_ALBUMS = async(artistID) => {
             return ALBUMS.items
         }
 
-    } catch (error) {
+    } catch(error) {
         console.log(error)
     }
 }
