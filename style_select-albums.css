@@ -102,27 +102,56 @@ h1 img:active {
     margin: 2rem;
 }
 
-.reset-albums, .disable-albums, .play {
-    background: #000000;
-    border: none;
-    box-shadow: 0 0 .2rem #000000;
-    color: #ffffff;
-    padding: .5rem 0;
-    transition: .2s;
-    width: 25%;
+.botones button:hover {
+    transform: scale(1.05);
 }
 
-.reset-albums:hover, .disable-albums:hover, .play:hover {
+.botones button:active {
+    transform: scale(1);
+}
+
+.reset-albums, .disable-albums, .play {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: .4rem;
+    transition: .2s;
+}
+
+.reset-albums::after {
+    content: '✓';
+    background: #009e00;
+    padding: 0 .3rem;
+}
+
+.reset-albums:hover {
+    background: #009e00;
+}
+
+.disable-albums::after {
+    content: '✖';
+    background: #ff0000;
+    padding: 0 .3rem;
+}
+
+.disable-albums:hover {
+    background: #ff0000;
+} 
+
+.play::after {
+    content: '▶';
+    background: #e16b5a;
+    padding: 0 .3rem;
+}
+
+.play:hover {
     background: #e16b5a;
 }
-
+    
 .off {
-    filter: opacity(25%);
-}
-
-.off:hover {
-    background: #000000;
     cursor: not-allowed;
+    filter: opacity(25%);
 }
 
 ::-webkit-scrollbar {
