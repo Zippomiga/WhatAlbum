@@ -116,7 +116,7 @@ h1 img:active {
     color: #ffffff;
     cursor: pointer;
     padding: .4rem;
-    transition: .2s;
+    transition: .1s;
 }
 
 .disable-albums::after {
