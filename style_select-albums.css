@@ -103,7 +103,7 @@ h1 img:active {
 }
 
 .botones button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .botones button:active {
@@ -119,6 +119,16 @@ h1 img:active {
     transition: .2s;
 }
 
+.disable-albums::after {
+    content: '✖';
+    background: #ff0000;
+    padding: 0 .3rem;
+}
+
+.disable-albums:hover {
+    background: #ff0000;
+}
+
 .reset-albums::after {
     content: '✓';
     background: #009e00;
@@ -128,16 +138,6 @@ h1 img:active {
 .reset-albums:hover {
     background: #009e00;
 }
-
-.disable-albums::after {
-    content: '✖';
-    background: #ff0000;
-    padding: 0 .3rem;
-}
-
-.disable-albums:hover {
-    background: #ff0000;
-} 
 
 .play::after {
     content: '▶';

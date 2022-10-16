@@ -9,8 +9,8 @@ const listaAlbums = document.querySelector('.lista-albums')
 const albumNodes = document.querySelector('.lista-albums').childNodes
 
 const btnBack = document.querySelector('.back')
-const btnEnableAll = document.querySelector('.reset-albums')
 const btnDisableAll = document.querySelector('.disable-albums')
+const btnEnableAll = document.querySelector('.reset-albums')
 const btnPlay = document.querySelector('.play')
 
 Aux.buildAlbumsList(ALBUMS, listaAlbums)
@@ -32,15 +32,6 @@ albumNodes.forEach(element => {
     })
 })
 
-function enableAll() {
-    albumNodes.forEach(element => {
-        element.classList.remove('disabled')
-    })
-
-    btnPlay.classList.remove('off')
-    contAux = ALBUMS.length
-}
-
 function disableAll() {
     albumNodes.forEach(element => {
         element.classList.add('disabled')
@@ -50,10 +41,19 @@ function disableAll() {
     contAux = 0
 }
 
+function enableAll() {
+    albumNodes.forEach(element => {
+        element.classList.remove('disabled')
+    })
+
+    btnPlay.classList.remove('off')
+    contAux = ALBUMS.length
+}
+
 function play() {
     const albumsLS = Aux.addAlbums(albumNodes)
     if(Object.values(albumsLS).length < minAlbums) {
-        alert(`Selecciona al menos ${minAlbums - contAux} ${(contAux === 3)? 'album' : 'albums'}`)
+        alert(`Seleccione al menos ${minAlbums - contAux} ${(contAux === 3)? 'album' : 'albums'}`)
     } else {
         localStorage.setItem('Filtrados', JSON.stringify(albumsLS))
         window.location.href = "./app.html"
@@ -61,6 +61,6 @@ function play() {
 }
 
 btnBack.addEventListener('click', () => {window.location.href = "./index.html"})
-btnEnableAll.addEventListener('click', enableAll)
 btnDisableAll.addEventListener('click', disableAll)
+btnEnableAll.addEventListener('click', enableAll)
 btnPlay.addEventListener('click', play)
