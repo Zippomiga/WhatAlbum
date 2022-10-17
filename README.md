@@ -1,4 +1,4 @@
-    1) Inserte el ID del artista con el que desee jugar
+    1) Vaya a Spotify, busque el artista con que el que desee jugar e inserte su ID
 
 ![Insert-ID](https://user-images.githubusercontent.com/101211643/195449939-7328f39c-5688-4659-abed-9a095e836f94.png)
 
