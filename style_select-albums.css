@@ -113,7 +113,7 @@ h1 img:active {
 
 .reset-albums, .disable-albums, .play {
     background: none;
-    border: none;
+    border: 1px solid transparent;
     color: #ffffff;
     cursor: pointer;
     padding: .4rem;
@@ -121,33 +121,33 @@ h1 img:active {
 }
 
 .disable-albums::after {
+    color: #ff0000;
     content: '✖';
-    background: #ff0000;
-    padding: 0 .3rem;
+    font-weight: bold;
 }
 
 .disable-albums:hover {
-    background: #ff0000;
+    border-bottom: 1px solid #ff0000;
 }
 
 .reset-albums::after {
+    color: #009e00;
     content: '✓';
-    background: #009e00;
-    padding: 0 .3rem;
+    font-weight: bold;
 }
 
 .reset-albums:hover {
-    background: #009e00;
+    border-bottom: 1px solid #009e00;
 }
 
 .play::after {
+    color: #e16b5a;
     content: '▶';
-    background: #e16b5a;
-    padding: 0 .3rem;
+    font-weight: bold;
 }
 
 .play:hover {
-    background: #e16b5a;
+    border-bottom: 1px solid #e16b5a;
 }
     
 .off {

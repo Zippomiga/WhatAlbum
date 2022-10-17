@@ -69,11 +69,14 @@ h1 img:active {
 }
 
 .reproductor {
+    margin: 0 25%;
     position: relative;
 }
 
 .reproductor::before {
-    bottom: -.4rem;
+    background: #282828;
+    border-radius: .75rem;
+    bottom: -.35rem;
     content: '';
     left: 0;
     position: absolute;
@@ -83,7 +86,7 @@ h1 img:active {
 
 .reproductor::after {
     border-top-right-radius: .75rem;
-    bottom: 59%;
+    bottom: 58.5%;
     content: '';
     left: calc(100% - 2.8rem);
     position: absolute;
@@ -91,11 +94,24 @@ h1 img:active {
     top: 0;
 }
 
+.reproductor span {
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 12%;
+    color: #ffffff;
+    display: flex;
+    font-size: 3rem;
+    height: 4rem;
+    justify-content: center;
+    left: .5rem;
+    position: absolute;
+    top: .5rem;
+    width: 4rem;
+}
 
 .repSpotify {
     margin-bottom: -5rem;
-    margin-left: -5rem;
-    width: calc(100% + 5rem);
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -145,5 +161,9 @@ h1 img:active {
 
     .cont span {
         font-size: 2vh;
+    }
+    
+    .reproductor {
+        margin: 0;
     }
 }
