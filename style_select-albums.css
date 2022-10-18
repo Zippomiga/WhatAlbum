@@ -66,9 +66,9 @@ h1 img:active {
 
 .album:hover {
     background: #000000;
-    cursor: pointer;
-    color: #ffffff;
     filter: opacity(75%);
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .album:active {

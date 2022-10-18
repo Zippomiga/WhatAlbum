@@ -6,15 +6,42 @@ const conts = document.querySelectorAll('.cont')
 
 let albumR;
 let trackR; 
+let good = 0
+let bad = 0
 
 conts.forEach(element => {
     element.addEventListener('click', event => {
-        if(event.target.className === ALBUMS[albumR].id || event.target.className === ALBUMS[albumR].album) {
-            alert('JESUS')
+        if(event.target.className.includes(ALBUMS[albumR].id) || event.target.className === ALBUMS[albumR].album) {
+            good++
+            document.querySelector('.check').innerHTML = good
+            element.children[1].style.background = '#009e00'
+            console.log(element.childNodes)
         } else {
-            alert('SATANAS')
+            bad++
+            good--
+            document.querySelector('.delete').innerHTML = bad
+            document.querySelector('.check').innerHTML = good
+            element.children[1].style.background = '#ff0000'
+            if(good < 0) {
+                good = 0
+                document.querySelector('.check').innerHTML = good
+            }
         }
-        init()
+        if(good === 10) {
+            alert('Ganaste!')
+            good = 0
+            bad = 0
+            document.querySelector('.delete').innerHTML = bad
+            document.querySelector('.check').innerHTML = good
+        }
+        if(bad === 10) {
+            alert('Perdiste')
+            good = 0
+            bad = 0
+            document.querySelector('.delete').innerHTML = bad
+            document.querySelector('.check').innerHTML = good
+        }
+        setTimeout(init, 250)
     })
 })
 

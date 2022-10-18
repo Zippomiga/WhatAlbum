@@ -42,7 +42,7 @@ const random = (x) => Math.floor(Math.random() * x.length)
 function buildDivs(albums, arr, conts) {
     for(let i = 0; i < conts.length; i++) {
         document.querySelector(`.cont${i}`).innerHTML = `
-        <img class="${albums[arr[i]].id}" src="${albums[arr[i]].tapa}">
+        <img class="album ${albums[arr[i]].id}" src="${albums[arr[i]].tapa}">
         <span class="${albums[arr[i]].album}">${albums[arr[i]].album}</span>
         `
     }
