@@ -155,13 +155,7 @@ h1 img:active {
 
 @media screen and (max-width: 425px) {
     h1 {
-        justify-content: center;
-        order: 2;
-        padding: 0;
-    }
-
-    h1 img {
-        height: 4vh;
+        display: none;
     }
 
     .contenedor {
