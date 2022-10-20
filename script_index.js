@@ -1,13 +1,13 @@
 import { Api } from "./api-spotify.js"
 
-const input_ID = document.querySelector('.input-ID')
-const btnCapturar_ID = document.querySelector('.insert-ID')
+const input_URL = document.querySelector('.input-ID')
+const btnCapturar_URL = document.querySelector('.insert-ID')
 
-input_ID.addEventListener('click', () => {
-        input_ID.value = ''
+input_URL.addEventListener('click', () => {
+        input_URL.value = ''
 })
 
-btnCapturar_ID.addEventListener('click', async(event) => {
+btnCapturar_URL.addEventListener('click', async(event) => {
     event.preventDefault()
 
     const valor = document.querySelector('.input-ID').value
@@ -16,10 +16,10 @@ btnCapturar_ID.addEventListener('click', async(event) => {
 
     const ALBUMS = await Api.REQ_ALBUMS(ID)
 
-    if(input_ID.value === '') {
-        input_ID.value = 'Por favor, inserte un ID 🙏'
+    if(input_URL.value === '') {
+        input_URL.value = 'Por favor, inserte una URL'
     } else if(!ALBUMS) {
-        input_ID.value = 'ID inválido 😭'
+        input_URL.value = 'URL inválida 😭'
     } else {
         localStorage.setItem('Albums', JSON.stringify(ALBUMS))
         window.location.href = "./select-albums.html"
