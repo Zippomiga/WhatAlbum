@@ -1,6 +1,6 @@
-    1) Vaya a Spotify, busque el artista con que el que desee jugar e inserte su ID
+    1) Vaya a Spotify, busque el artista con que el que desee jugar e inserte su URL
 
-![Insert-ID](https://user-images.githubusercontent.com/101211643/195449939-7328f39c-5688-4659-abed-9a095e836f94.png)
+![ID](https://user-images.githubusercontent.com/101211643/197124335-8e2fbbbc-0555-4770-8a96-7735562b73de.png)
 
     2) Filtre los albums con los que desee jugar (al menos 4 albums)
 
